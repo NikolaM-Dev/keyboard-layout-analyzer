@@ -39,13 +39,20 @@ fn main() {
         ['z', 'x', 'm', 'c', 'v', 'k', 'l', ',', '.', '/'],
     ]);
 
-    let mut loggers: [(&str, KeyLogger); 6] = [
+    let rstlne = KeyboardBuilder::build([
+        ['q', 'w', 'd', 'f', 'z', ';', 'u', 'k', 'y', 'p'],
+        ['a', 's', 'e', 'r', 'l', 'h', 'n', 'i', 'o', 't'],
+        ['g', 'x', 'c', 'v', '/', 'b', 'j', 'm', ',', '.'],
+    ]);
+
+    let mut loggers: [(&str, KeyLogger); 7] = [
         ("QWERTY", KeyLogger::new(qwerty)),
         ("DVORAK", KeyLogger::new(dvorak)),
         ("HALMAK", KeyLogger::new(halmak)),
         ("WORKMAN", KeyLogger::new(workman)),
         ("COLEMAK", KeyLogger::new(colemak)),
         ("COLEMAK DH", KeyLogger::new(colemak_dh)),
+        ("RSTLNE", KeyLogger::new(rstlne)),
     ];
 
     loop {
